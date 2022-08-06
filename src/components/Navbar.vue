@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100 px-4">
+  <div class="navbar bg-base-100">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -24,6 +24,7 @@
         >
           <li><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'Cart' }">Cart</RouterLink></li>
+          <li><RouterLink :to="{ name: 'Shop' }">Shop</RouterLink></li>
         </ul>
       </div>
     </div>
@@ -33,8 +34,6 @@
         class="btn btn-ghost normal-case text-xl"
         >Docia</RouterLink
       >
-      <!--         <RouterLink :to="{ name: 'Home' }">Home</RouterLink>
- -->
     </div>
     <div class="navbar-end">
       <!-- <button class="btn btn-ghost btn-circle">
