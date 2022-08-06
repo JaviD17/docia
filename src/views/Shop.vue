@@ -1,7 +1,7 @@
 <template>
-  <ProductCard />
+  <ShopHero />
 </template>
 
 <script setup>
-import ProductCard from "../components/ProductCard.vue";
+import ShopHero from "../components/ShopHero.vue";
 </script>
