@@ -25,6 +25,7 @@
           <li><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'Cart' }">Cart</RouterLink></li>
           <li><RouterLink :to="{ name: 'Shop' }">Shop</RouterLink></li>
+          <li><RouterLink :to="{ name: 'Calc' }">Calc</RouterLink></li>
         </ul>
       </div>
     </div>

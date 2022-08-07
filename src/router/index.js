@@ -4,6 +4,7 @@ import Cart from "../views/Cart.vue";
 import Shop from "../views/Shop.vue";
 import Profile from "../views/Profile.vue";
 import Settings from "../views/Settings.vue";
+import Calc from "../views/Calc.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/profile/settings",
       name: "Settings",
       component: Settings,
+    },
+    {
+      path: "/calc",
+      name: "Calc",
+      component: Calc,
     },
   ],
 });
