@@ -103,8 +103,8 @@
               <span class="badge">New</span>
             </RouterLink>
           </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
+          <li><RouterLink :to="{ name: 'Settings' }">Settings</RouterLink></li>
+          <li><button>Logout</button></li>
         </ul>
       </div>
     </div>
