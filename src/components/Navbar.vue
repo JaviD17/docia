@@ -84,8 +84,13 @@
       </div>
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
+          <!-- <div class="w-10 rounded-full">
             <img src="https://placeimg.com/80/80/people" />
+          </div> -->
+          <div class="avatar">
+            <div class="w-10 mask mask-hexagon">
+              <img src="https://placeimg.com/80/80/people" />
+            </div>
           </div>
         </label>
         <ul
@@ -93,10 +98,10 @@
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
-            <a class="justify-between">
+            <RouterLink :to="{ name: 'Profile' }" class="justify-between">
               Profile
               <span class="badge">New</span>
-            </a>
+            </RouterLink>
           </li>
           <li><a>Settings</a></li>
           <li><a>Logout</a></li>
