@@ -103,14 +103,14 @@
         <div>
           <RouterLink
             :to="{ name: 'Signup' }"
-            class="btn btn-primary btn-outline btn-sm"
+            class="btn btn-accent btn-outline btn-sm"
             >signup</RouterLink
           >
         </div>
         <div>
           <RouterLink
             :to="{ name: 'Login' }"
-            class="btn btn-primary btn-outline btn-sm"
+            class="btn btn-accent btn-outline btn-sm"
             >login</RouterLink
           >
         </div>
