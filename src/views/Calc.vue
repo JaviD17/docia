@@ -1,3 +1,3 @@
 <template>
-  <div>calc</div>
+  <div>settings</div>
 </template>

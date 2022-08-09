@@ -5,6 +5,8 @@ import Shop from "../views/Shop.vue";
 import Profile from "../views/Profile.vue";
 import Settings from "../views/Settings.vue";
 import Calc from "../views/Calc.vue";
+import Signup from "../views/Signup.vue";
+import Login from "../views/Login.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +40,16 @@ const router = createRouter({
       path: "/calc",
       name: "Calc",
       component: Calc,
+    },
+    {
+      path: "/signup",
+      name: "Signup",
+      component: Signup,
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login,
     },
   ],
 });
