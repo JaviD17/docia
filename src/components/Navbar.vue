@@ -22,10 +22,9 @@
           tabindex="0"
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
-          <li><RouterLink :to="{ name: 'Cart' }">Cart</RouterLink></li>
-          <li><RouterLink :to="{ name: 'Shop' }">Shop</RouterLink></li>
-          <li><RouterLink :to="{ name: 'Calc' }">Calc</RouterLink></li>
+          <li v-for="navLink in navLinks">
+            <RouterLink :to="{ name: navLink }">{{ navLink }}</RouterLink>
+          </li>
         </ul>
       </div>
     </div>
@@ -123,4 +122,6 @@
 import { ref } from "vue";
 
 const loggedIn = ref(false);
+
+const navLinks = ref(["Home", "Shop", "Cart", "Calc"]);
 </script>
