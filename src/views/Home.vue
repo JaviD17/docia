@@ -13,18 +13,25 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-evenly gap-y-16 py-8">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <ProductCard
+        v-for="(product, index) in products"
+        :key="product.id"
+        :product="product"
+        :index="index"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import ProductCard from "../components/ProductCard.vue";
+
+const products = ref([
+  { id: 1, title: "Drop Cut tee", price: "19.99" },
+  { id: 2, title: "Drop Cut sleeveless", price: "19.99" },
+  { id: 3, title: "Drop Cut sleevless hoodie", price: "19.99" },
+]);
 </script>
 
 <style>
