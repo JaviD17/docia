@@ -11,7 +11,7 @@
           <p class="mt-1 font-bold">${{ price }}</p>
         </span>
         <button class="btn btn-outline btn-sm btn-primary">Buy Now</button>
-        <button class="btn btn-outline btn-sm gap-2">
+        <button class="btn btn-outline btn-sm btn-secondary">
           Add to
           <svg
             xmlns="http://www.w3.org/2000/svg"

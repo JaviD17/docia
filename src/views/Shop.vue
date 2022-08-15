@@ -8,23 +8,27 @@ import "vueperslides/dist/vueperslides.css";
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 
+import getCollection from "../composables/getCollection";
+
 // firebase imports
-import { db } from "../firebase/config";
-import { collection, getDocs } from "firebase/firestore";
+// import { db } from "../firebase/config";
+// import { collection, getDocs } from "firebase/firestore";
 
-const products = ref([]);
+// const products = ref([]);
 
-const colRef = collection(db, "products");
+// const colRef = collection(db, "products");
 
-getDocs(colRef).then((snapshot) => {
-  let docs = [];
+// getDocs(colRef).then((snapshot) => {
+//   let docs = [];
 
-  snapshot.docs.forEach((doc) => {
-    docs.push({ ...doc.data(), id: doc.id, image: slide1 });
-  });
+//   snapshot.docs.forEach((doc) => {
+//     docs.push({ ...doc.data(), id: doc.id, image: slide1 });
+//   });
 
-  products.value = docs;
-});
+//   products.value = docs;
+// });
+
+const { documents } = getCollection("products");
 
 // read docs for v-for with components, refactor ProductCard component to handle data intake
 
@@ -43,7 +47,7 @@ const slides = [
 </script>
 
 <template>
-  <div class="bg-shop">
+  <div>
     <vueper-slides autoplay fade :touchable="false">
       <vueper-slide
         v-for="(slide, i) in slides"
@@ -55,13 +59,13 @@ const slides = [
       </vueper-slide>
     </vueper-slides>
 
-    <div class="flex flex-wrap justify-evenly gap-y-16 py-16">
+    <div class="bg-shop flex flex-wrap justify-evenly gap-y-16 py-16">
       <ProductCard
-        v-for="product in products"
-        :key="product.id"
-        :image="product.image"
-        :title="product.title"
-        :price="product.price"
+        v-for="document in documents"
+        :key="document.id"
+        :image="document.image"
+        :title="document.title"
+        :price="document.price"
       />
     </div>
   </div>
@@ -73,7 +77,7 @@ const slides = [
   background: linear-gradient(
     0deg,
     rgba(39, 41, 53, 1) 0%,
-    rgba(190, 149, 249, 1) 50%,
+    rgba(190, 149, 249, 0.25) 50%,
     rgba(39, 41, 53, 1) 100%
   );
 }
