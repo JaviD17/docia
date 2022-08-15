@@ -28,7 +28,7 @@ import getCollection from "../composables/getCollection";
 //   products.value = docs;
 // });
 
-const { documents } = getCollection("products");
+const { documents: products } = getCollection("products");
 
 // read docs for v-for with components, refactor ProductCard component to handle data intake
 
@@ -61,11 +61,11 @@ const slides = [
 
     <div class="bg-shop flex flex-wrap justify-evenly gap-y-16 py-16">
       <ProductCard
-        v-for="document in documents"
-        :key="document.id"
-        :image="document.image"
-        :title="document.title"
-        :price="document.price"
+        v-for="product in products"
+        :key="product.id"
+        :image="product.image"
+        :title="product.title"
+        :price="product.price"
       />
     </div>
   </div>
