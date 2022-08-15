@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center my-24">
+  <div class="bg-shop flex justify-center my-24">
     <div class="card w-96 bg-base-300 shadow-xl">
       <div class="card-body items-center text-center">
         <h2 class="card-title text-primary">Log In</h2>
@@ -28,3 +28,15 @@
     </div>
   </div>
 </template>
+
+<style>
+.bg-shop {
+  background: rgb(39, 41, 53);
+  background: linear-gradient(
+    0deg,
+    rgba(39, 41, 53, 1) 0%,
+    rgba(190, 149, 249, 0.25) 50%,
+    rgba(39, 41, 53, 1) 100%
+  );
+}
+</style>

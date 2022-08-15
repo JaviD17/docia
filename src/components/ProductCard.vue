@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-96 bg-base-100 text-base-content shadow-xl">
+  <div class="back card w-96 bg-base-100 text-base-content shadow-xl">
     <figure>
       <img :src="image" alt="Product" />
     </figure>
@@ -32,3 +32,9 @@
 <script setup>
 defineProps(["key", "image", "title", "price"]);
 </script>
+
+<style>
+.back {
+  z-index: 1;
+}
+</style>
