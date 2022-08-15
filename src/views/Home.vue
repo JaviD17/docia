@@ -13,12 +13,12 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-evenly gap-y-16 py-8">
-      <ProductCard
+      <!-- <ProductCard
         v-for="(product, index) in products"
         :key="product.id"
         :product="product"
         :index="index"
-      />
+      /> -->
     </div>
   </div>
 </template>

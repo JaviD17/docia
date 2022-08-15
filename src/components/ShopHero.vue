@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8">
+  <div>
     <div class="carousel w-full">
       <div id="slide1" class="carousel-item relative w-full">
         <img src="https://placeimg.com/800/200/arch" class="w-full" />
