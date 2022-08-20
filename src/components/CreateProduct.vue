@@ -32,7 +32,12 @@ const handleSubmit = () => {
     <!-- Put this part before </body> tag -->
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <label for="my-modal" class="modal cursor-pointer">
-      <label class="modal-box relative" for="">
+      <div class="modal-box relative" for="">
+        <label
+          for="my-modal"
+          class="btn btn-sm btn-circle absolute right-2 top-2 m-2.5"
+          >✕</label
+        >
         <div class="flex justify-center flex-wrap">
           <h3 class="text-xl text-primary font-bold mb-4">
             Create New Product
@@ -139,7 +144,7 @@ const handleSubmit = () => {
             </div>
           </form>
         </div>
-      </label>
+      </div>
     </label>
   </div>
 </template>
