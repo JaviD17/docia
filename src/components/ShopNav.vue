@@ -6,9 +6,10 @@ const release = ref(false);
 </script>
 
 <template>
-  <div class="flex justify-between my-16 mx-6">
+  <div class="flex justify-between m-8">
     <div class="">
-      <button class="btn btn-circle btn-sm">
+      <!-- The button to open modal -->
+      <label for="my-modal-4" class="btn btn-circle modal-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-4.5 -4.5 24 24"
@@ -17,9 +18,22 @@ const release = ref(false);
         >
           <path
             d="M8.9 6.9v-5a1 1 0 1 0-2 0v5h-5a1 1 0 1 0 0 2h5v5a1 1 0 1 0 2 0v-5h5a1 1 0 1 0 0-2h-5z"
-          ></path>
-        </svg>
-      </button>
+          ></path></svg
+      ></label>
+
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+      <label for="my-modal-4" class="modal cursor-pointer">
+        <label class="modal-box relative" for="">
+          <h3 class="text-lg font-bold">
+            Create New Product
+          </h3>
+          <p class="py-4">
+            You've been selected for a chance to get one year of subscription to
+            use Wikipedia for free!
+          </p>
+        </label>
+      </label>
     </div>
     <div class="">
       <div class="dropdown dropdown-hover dropdown-end">
