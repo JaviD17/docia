@@ -48,8 +48,34 @@ const release = ref(false);
                 placeholder="Type here"
                 class="input input-bordered w-full max-w-xs"
               />
+              <label class="label">
+                <span class="label-text">Type</span>
+              </label>
+              <select class="select select-bordered font-normal">
+                <option disabled selected>Pick one</option>
+                <option>Drop Cut Shirt</option>
+                <option>Long Sleeve</option>
+                <option>Hoodie</option>
+                <option>Pants</option>
+                <option>Shorts</option>
+              </select>
+              <label class="label">
+                <span class="label-text">Description</span>
+              </label>
+              <textarea
+                class="textarea textarea-bordered h-24"
+                placeholder="Type here"
+              ></textarea>
+              <label
+                class="my-2 flex justify-center gap-2 label cursor-pointer"
+              >
+                <span class="label-text">Hold</span>
+                <input type="checkbox" checked="checked" class="checkbox" />
+              </label>
+              <div class="flex justify-center">
+                <button class="btn btn-secondary">Submit</button>
+              </div>
             </div>
-            
           </div>
         </label>
       </label>

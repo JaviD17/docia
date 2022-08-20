@@ -5,7 +5,7 @@
     </figure>
     <div class="card-body">
       <div class="flex justify-between">
-        <h2 class="card-title">{{ title }}</h2>
+        <h2 class="card-title text-2xl font-bold">{{ title }}</h2>
         <label class="swap swap-flip text-9xl">
           <!-- this hidden checkbox controls the state -->
           <input type="checkbox" />
@@ -37,24 +37,26 @@
         </label>
       </div>
       <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div class="card-actions justify-end">
+      <div class="card-actions justify-between">
         <span>
           <p class="mt-1 font-bold">${{ price }}</p>
         </span>
-        <button class="btn btn-outline btn-sm btn-primary">Buy Now</button>
-        <button class="btn btn-outline btn-sm btn-secondary">
-          Add to
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="-3 -4 24 24"
-            width="24"
-            fill="currentColor"
-          >
-            <path
-              d="M7 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM.962 1.923A.962.962 0 0 1 .962 0h1.151c.902 0 1.682.626 1.878 1.506l1.253 5.642c.196.88.976 1.506 1.878 1.506h7.512l1.442-5.77H6.731a.962.962 0 0 1 0-1.922h9.345a1.923 1.923 0 0 1 1.866 2.39L16.5 9.12a1.923 1.923 0 0 1-1.866 1.457H7.122a3.846 3.846 0 0 1-3.755-3.012L2.113 1.923H.962z"
-            ></path>
-          </svg>
-        </button>
+        <div>
+          <button class="mx-1 btn btn-outline btn-sm btn-primary">Buy Now</button>
+          <button class="mx-1 btn btn-outline btn-sm btn-secondary">
+            Add to
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-3 -4 24 24"
+              width="24"
+              fill="currentColor"
+            >
+              <path
+                d="M7 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM.962 1.923A.962.962 0 0 1 .962 0h1.151c.902 0 1.682.626 1.878 1.506l1.253 5.642c.196.88.976 1.506 1.878 1.506h7.512l1.442-5.77H6.731a.962.962 0 0 1 0-1.922h9.345a1.923 1.923 0 0 1 1.866 2.39L16.5 9.12a1.923 1.923 0 0 1-1.866 1.457H7.122a3.846 3.846 0 0 1-3.755-3.012L2.113 1.923H.962z"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
