@@ -7,9 +7,10 @@ const release = ref(false);
 
 <template>
   <div class="flex justify-between m-8">
+    <!-- div containing plus button with pop up modal -->
     <div class="">
       <!-- The button to open modal -->
-      <label for="my-modal-4" class="btn btn-circle modal-button">
+      <label for="my-modal" class="btn btn-circle modal-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-4.5 -4.5 24 24"
@@ -22,19 +23,38 @@ const release = ref(false);
       ></label>
 
       <!-- Put this part before </body> tag -->
-      <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-      <label for="my-modal-4" class="modal cursor-pointer">
+      <input type="checkbox" id="my-modal" class="modal-toggle" />
+      <label for="my-modal" class="modal cursor-pointer">
         <label class="modal-box relative" for="">
-          <h3 class="text-lg font-bold">
-            Create New Product
-          </h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <div class="flex justify-center flex-wrap">
+            <h3 class="text-xl text-primary font-bold mb-4">
+              Create New Product
+            </h3>
+            <!-- product form inside modal -->
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Product Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <label class="label">
+                <span class="label-text">Price</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            
+          </div>
         </label>
       </label>
     </div>
+
     <div class="">
       <div class="dropdown dropdown-hover dropdown-end">
         <label tabindex="0" class="btn m-1">
