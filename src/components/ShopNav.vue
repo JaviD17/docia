@@ -33,7 +33,7 @@ const release = ref(false);
             <!-- product form inside modal -->
             <div class="form-control w-full max-w-xs">
               <label class="label">
-                <span class="label-text">Product Name</span>
+                <span class="label-text">Name</span>
               </label>
               <input
                 type="text"
@@ -45,7 +45,7 @@ const release = ref(false);
               </label>
               <input
                 type="text"
-                placeholder="Type here"
+                placeholder="Ex: 19.99"
                 class="input input-bordered w-full max-w-xs"
               />
               <label class="label">
@@ -53,12 +53,37 @@ const release = ref(false);
               </label>
               <select class="select select-bordered font-normal">
                 <option disabled selected>Pick one</option>
-                <option>Drop Cut Shirt</option>
-                <option>Long Sleeve</option>
+                <option>Shirt</option>
+                <option>Long Sleeve Shirt</option>
                 <option>Hoodie</option>
                 <option>Pants</option>
                 <option>Shorts</option>
               </select>
+              <label class="label">
+                <span class="label-text">Sizes</span>
+              </label>
+              <div class="border-y-2 border-neutral rounded-lg p-2">
+                <label class="label cursor-pointer">
+                  <span class="label-text">X-Small</span>
+                  <input type="checkbox" class="toggle" checked />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Small</span>
+                  <input type="checkbox" class="toggle" checked />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Medium</span>
+                  <input type="checkbox" class="toggle" checked />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Large</span>
+                  <input type="checkbox" class="toggle" checked />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">X-Large</span>
+                  <input type="checkbox" class="toggle" checked />
+                </label>
+              </div>
               <label class="label">
                 <span class="label-text">Description</span>
               </label>
