@@ -1,7 +1,7 @@
 import { ref, watchEffect } from "vue";
 
 import { db } from "../firebase/config";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 
 import slide1 from "../assets/slide1.jpg";
 
@@ -9,7 +9,7 @@ const getCollection = (c) => {
   const documents = ref(null);
 
   // collection reference
-  let colRef = collection(db, c);
+  let colRef = query(collection(db, c), orderBy("price"));
 
   const unsub = onSnapshot(colRef, (snapshot) => {
     let results = [];
