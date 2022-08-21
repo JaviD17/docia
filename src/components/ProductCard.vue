@@ -40,7 +40,10 @@ defineProps(["key", "image", "name", "price", "description"]);
               </svg>
             </div>
           </label>
-          <button class="btn btn-ghost btn-sm btn-circle">
+          <button
+            @click="$emit('deleteProduct')"
+            class="btn btn-ghost btn-sm btn-circle"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-3 -2 24 24"

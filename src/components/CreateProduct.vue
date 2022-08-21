@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { db } from "../firebase/config";
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "@firebase/firestore";
 
 const name = ref("");
 const price = ref("");
@@ -20,6 +20,7 @@ const handleSubmit = async () => {
     name: name.value,
     price: price.value,
     description: description.value,
+    createdAt: serverTimestamp(),
   });
 
   name.value = "";

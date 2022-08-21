@@ -11,6 +11,9 @@ import slide2 from "../assets/slide2.jpg";
 
 import getCollection from "../composables/getCollection";
 
+import { db } from "../firebase/config";
+import { doc, deleteDoc } from "firebase/firestore";
+
 // firebase imports
 // import { db } from "../firebase/config";
 // import { collection, getDocs } from "firebase/firestore";
@@ -45,6 +48,12 @@ const slides = [
     image: slide2,
   },
 ];
+
+const handleDelete = (product) => {
+  const docRef = doc(db, "products", product.id);
+
+  deleteDoc(docRef);
+};
 </script>
 
 <template>
@@ -70,6 +79,7 @@ const slides = [
         :name="product.name"
         :price="product.price"
         :description="product.description"
+        @delete-product="handleDelete(product)"
       />
     </div>
   </div>
