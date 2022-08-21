@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import CreateProduct from "./CreateProduct.vue";
+import Edit from "./Edit.vue";
 
 const price = ref(false);
 const release = ref(false);

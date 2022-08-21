@@ -67,8 +67,9 @@ const slides = [
         v-for="product in products"
         :key="product.id"
         :image="product.image"
-        :title="product.title"
+        :name="product.name"
         :price="product.price"
+        :description="product.description"
       />
     </div>
   </div>
