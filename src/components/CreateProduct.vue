@@ -20,6 +20,7 @@ const handleSubmit = async () => {
     name: name.value,
     price: price.value,
     description: description.value,
+    liked: false,
     createdAt: serverTimestamp(),
   });
 
@@ -176,19 +177,39 @@ const handleSubmit = async () => {
       </label>
     </div>
 
-    <div>
-      <button class="btn btn-circle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-2.5 -2.5 24 24"
-          width="24"
-          fill="currentColor"
-        >
-          <path
-            d="M12.238 5.472L3.2 14.51l-.591 2.016 1.975-.571 9.068-9.068-1.414-1.415zM13.78 3.93l1.414 1.414 1.318-1.318a.5.5 0 0 0 0-.707l-.708-.707a.5.5 0 0 0-.707 0L13.781 3.93zm3.439-2.732l.707.707a2.5 2.5 0 0 1 0 3.535L5.634 17.733l-4.22 1.22a1 1 0 0 1-1.237-1.241l1.248-4.255 12.26-12.26a2.5 2.5 0 0 1 3.535 0z"
-          ></path>
-        </svg>
-      </button>
+    <div class="">
+      <label class="swap swap-rotate">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" />
+
+        <!-- sun icon -->
+        <div class="btn btn-circle swap-on">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-2.5 -2.5 24 24"
+            width="24"
+            fill="currentColor"
+          >
+            <path
+              d="M16.318 6.11l-3.536-3.535 1.415-1.414c.63-.63 2.073-.755 2.828 0l.707.707c.755.755.631 2.198 0 2.829L16.318 6.11zm-1.414 1.415l-9.9 9.9-4.596 1.06 1.06-4.596 9.9-9.9 3.536 3.536z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- moon icon -->
+        <div class="btn btn-circle swap-off">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-2.5 -2.5 24 24"
+            width="24"
+            fill="currentColor"
+          >
+            <path
+              d="M12.238 5.472L3.2 14.51l-.591 2.016 1.975-.571 9.068-9.068-1.414-1.415zM13.78 3.93l1.414 1.414 1.318-1.318a.5.5 0 0 0 0-.707l-.708-.707a.5.5 0 0 0-.707 0L13.781 3.93zm3.439-2.732l.707.707a2.5 2.5 0 0 1 0 3.535L5.634 17.733l-4.22 1.22a1 1 0 0 1-1.237-1.241l1.248-4.255 12.26-12.26a2.5 2.5 0 0 1 3.535 0z"
+            ></path>
+          </svg>
+        </div>
+      </label>
     </div>
   </div>
 </template>

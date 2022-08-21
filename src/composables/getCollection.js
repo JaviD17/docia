@@ -9,7 +9,7 @@ const getCollection = (c) => {
   const documents = ref(null);
 
   // collection reference
-  let colRef = query(collection(db, c), orderBy("price"));
+  let colRef = query(collection(db, c), orderBy("createdAt", "desc"));
 
   const unsub = onSnapshot(colRef, (snapshot) => {
     let results = [];

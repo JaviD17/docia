@@ -12,7 +12,7 @@ import slide2 from "../assets/slide2.jpg";
 import getCollection from "../composables/getCollection";
 
 import { db } from "../firebase/config";
-import { doc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 // firebase imports
 // import { db } from "../firebase/config";
@@ -54,6 +54,14 @@ const handleDelete = (product) => {
 
   deleteDoc(docRef);
 };
+
+const handleLike = (product) => {
+  const docRef = doc(db, "products", product.id);
+
+  updateDoc(docRef, {
+    liked: !product.liked,
+  });
+};
 </script>
 
 <template>
@@ -80,6 +88,8 @@ const handleDelete = (product) => {
         :price="product.price"
         :description="product.description"
         @delete-product="handleDelete(product)"
+        @like-on="handleLike(product)"
+        @like-off="handleLike(product)"
       />
     </div>
   </div>
