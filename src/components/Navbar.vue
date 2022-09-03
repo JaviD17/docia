@@ -1,3 +1,18 @@
+<script setup>
+import { ref, computed } from "vue";
+import { auth } from "../firebase/config";
+import { signOut } from "@firebase/auth";
+import getUser from "../composables/getUser";
+
+const navLinks = ref(["Home", "Shop", "Cart", "Calc"]);
+
+const { user } = getUser();
+
+const handleClick = () => {
+  signOut(auth);
+};
+</script>
+
 <template>
   <div class="navbar bg-base-100">
     <div class="navbar-start">
@@ -28,14 +43,19 @@
         </ul>
       </div>
     </div>
-    <div class="navbar-center">
+    <div class="navbar-center hidden lg:block">
       <RouterLink
         :to="{ name: 'Home' }"
         class="btn btn-ghost normal-case text-xl"
         >Docia</RouterLink
       >
     </div>
-    <div class="navbar-end" v-if="loggedIn">
+    <!-- if user is logged in -->
+    <div class="navbar-end flex gap-1" v-if="user">
+      <!-- show user email -->
+      <div class="text-accent font-semibold uppercase">
+        Hi {{ user.displayName }}
+      </div>
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle">
           <div class="indicator">
@@ -93,11 +113,12 @@
             </RouterLink>
           </li>
           <li><RouterLink :to="{ name: 'Settings' }">Settings</RouterLink></li>
-          <li><button>Logout</button></li>
+          <li><button @click="handleClick">Logout</button></li>
         </ul>
       </div>
     </div>
-    <div class="navbar-end" v-else>
+    <!-- if user is NOT logged in -->
+    <div class="navbar-end" v-if="!user">
       <div class="mr-2 flex gap-4">
         <div>
           <RouterLink
@@ -117,11 +138,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from "vue";
-
-const loggedIn = ref(false);
-
-const navLinks = ref(["Home", "Shop", "Cart", "Calc"]);
-</script>

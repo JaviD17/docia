@@ -6,7 +6,7 @@ import useSignup from "../composables/useSignup";
 const firstName = ref("");
 const lastName = ref("");
 
-const fullName = computed(() => {
+const displayName = computed(() => {
   return firstName.value + " " + lastName.value;
 });
 const email = ref("");
@@ -16,7 +16,7 @@ const { error, isPending, signup } = useSignup();
 const router = useRouter();
 
 const handleSubmit = async () => {
-  await signup(email.value, password.value);
+  await signup(displayName.value, email.value, password.value);
 
   if (!error.value) {
     router.push({ name: "Home" });
