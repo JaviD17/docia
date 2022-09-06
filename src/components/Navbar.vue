@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect } from "vue";
+import { useRouter } from "vue-router";
 import { auth } from "../firebase/config";
 import { signOut } from "@firebase/auth";
 import getUser from "../composables/getUser";
@@ -7,10 +8,18 @@ import getUser from "../composables/getUser";
 const navLinks = ref(["Home", "Shop", "Cart", "Calc"]);
 
 const { user } = getUser();
+const router = useRouter();
 
 const handleClick = () => {
   signOut(auth);
+  router.push({ name: "Home" });
 };
+
+// watchEffect(() => {
+//   if (!user.value) {
+//     router.push({ name: "Login" });
+//   }
+// });
 </script>
 
 <template>

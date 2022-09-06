@@ -8,6 +8,17 @@ import Calc from "../views/Calc.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 
+import { auth } from "../firebase/config";
+
+const requireAuth = (to, from, next) => {
+  let user = auth.currentUser;
+  if (!user) {
+    next({ name: "Login" });
+  } else {
+    next();
+  }
+};
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -20,6 +31,7 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       component: Cart,
+      beforeEnter: requireAuth,
     },
     {
       path: "/shop",
@@ -30,11 +42,13 @@ const router = createRouter({
       path: "/profile",
       name: "Profile",
       component: Profile,
+      beforeEnter: requireAuth,
     },
     {
       path: "/profile/settings",
       name: "Settings",
       component: Settings,
+      beforeEnter: requireAuth,
     },
     {
       path: "/calc",

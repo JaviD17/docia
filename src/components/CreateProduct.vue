@@ -2,13 +2,18 @@
 import { ref } from "vue";
 import { db } from "../firebase/config";
 import { addDoc, collection, serverTimestamp } from "@firebase/firestore";
+import getUser from "../composables/getUser";
 
+const colors = ["White", "Black", "Gray", "Sand"];
+
+const { user } = getUser();
 const name = ref("");
 const price = ref("");
-// const type = ref([]);
+const type = ref([]);
 const description = ref("");
 // const hold = ref(false);
 const viewForm = ref(false);
+const checkedColors = ref([]);
 
 const handleSubmit = async () => {
   console.log(name.value, price.value, description.value);
@@ -17,9 +22,12 @@ const handleSubmit = async () => {
   const colRef = collection(db, "products");
 
   await addDoc(colRef, {
+    userUid: user.value.uid,
     name: name.value,
     price: price.value,
+    type: type.value,
     description: description.value,
+    colors: checkedColors.value,
     liked: false,
     createdAt: serverTimestamp(),
   });
@@ -96,8 +104,8 @@ const handleSubmit = async () => {
               <label class="label">
                 <span class="label-text">Type</span>
               </label>
-              <select class="select select-bordered font-normal">
-                <option disabled selected>Pick one</option>
+              <select v-model="type" class="select select-bordered font-normal">
+                <option disabled value="">Pick one</option>
                 <option>Shirt</option>
                 <option>Long Sleeve Shirt</option>
                 <option>Hoodie</option>
@@ -116,7 +124,16 @@ const handleSubmit = async () => {
                 <span class="label-text">Colors</span>
               </label>
               <div class="border-y-2 border-neutral rounded-lg p-2">
-                <label class="label cursor-pointer">
+                <label v-for="color in colors" class="label cursor-pointer">
+                  <span class="label-text">{{ color }}</span>
+                  <input
+                    v-model="checkedColors"
+                    :value="color"
+                    type="checkbox"
+                    class="toggle"
+                  />
+                </label>
+                <!-- <label class="label cursor-pointer">
                   <span class="label-text">White</span>
                   <input type="checkbox" class="toggle" checked />
                 </label>
@@ -135,7 +152,7 @@ const handleSubmit = async () => {
                 <label class="label cursor-pointer">
                   <span class="label-text">Olive</span>
                   <input type="checkbox" class="toggle" checked />
-                </label>
+                </label> -->
               </div>
               <label class="label">
                 <span class="label-text">Sizes</span>
