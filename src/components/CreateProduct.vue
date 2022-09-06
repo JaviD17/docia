@@ -42,7 +42,8 @@ const handleSubmit = async () => {
 <template>
   <div class="flex gap-2">
     <!-- The button to open modal -->
-    <div>
+    <!-- only displays if user is logged in -->
+    <div v-if="user">
       <label
         @click="viewForm = true"
         for="my-modal"
@@ -194,7 +195,8 @@ const handleSubmit = async () => {
       </label>
     </div>
 
-    <div class="">
+    <!-- only displays if user is logged in -->
+    <div class="" v-if="user">
       <label class="swap swap-rotate">
         <!-- this hidden checkbox controls the state -->
         <input type="checkbox" />
